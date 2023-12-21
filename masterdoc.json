@@ -1,0 +1,16 @@
+[
+    {
+      "Name": "Advanced Azure Networking with Azure Virtual WAN",
+      "Language": "English",
+      "Files": [
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Advanced-Azure-Networking-with-Azure-Virtual-WAN/main/01.md",
+          "Order": 1
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Advanced-Azure-Networking-with-Azure-Virtual-WAN/main/02.md",
+          "Order": 2
+        },
+      ]
+    }
+  ]

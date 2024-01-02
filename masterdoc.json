@@ -11,6 +11,10 @@
           "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Advanced-Azure-Networking-with-Azure-Virtual-WAN/main/02.md",
           "Order": 2
         },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Advanced-Azure-Networking-with-Azure-Virtual-WAN/main/03.md",
+          "Order": 3
+        },
       ]
     }
   ]

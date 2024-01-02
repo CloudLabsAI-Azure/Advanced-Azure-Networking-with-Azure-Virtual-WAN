@@ -4,17 +4,21 @@
       "Language": "English",
       "Files": [
         {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Advanced-Azure-Networking-with-Azure-Virtual-WAN/main/01.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Advanced-Azure-Networking-with-Azure-Virtual-WAN/main/Gettingstarted.md",
           "Order": 1
         },
         {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Advanced-Azure-Networking-with-Azure-Virtual-WAN/main/02.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Advanced-Azure-Networking-with-Azure-Virtual-WAN/main/01.md",
           "Order": 2
         },
         {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Advanced-Azure-Networking-with-Azure-Virtual-WAN/main/03.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Advanced-Azure-Networking-with-Azure-Virtual-WAN/main/02.md",
           "Order": 3
         },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Advanced-Azure-Networking-with-Azure-Virtual-WAN/main/03.md",
+          "Order": 4
+        }
       ]
     }
   ]

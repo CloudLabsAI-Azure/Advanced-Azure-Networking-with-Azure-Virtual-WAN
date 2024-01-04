@@ -42,19 +42,19 @@ Contoso is seeking assistance in configuring and deploying their insurance appli
 
 You will learn the fundamentals of Azure networking in this hands-on lab. You will gain practical experience using networking resources, establishing connections between cloud-based and on-premise resources, and dealing with Azure resources.
 
-### Exercise 1: Getting Started with Azure 
+### Exercise 1: **Getting Started with Azure**
 
 In this exercise, you'll log in to the Azure Portal and review the pre-deployed resources that are part of the lab environment. 
 
-### Exercise 2: Create a secured Virtual Hub and Azure firewall
+### Exercise 2: **Create a secured Virtual Hub and Azure firewall**
 
 This exercise walks you through the steps to convert a virtual WAN hub to a secured hub by installing Azure Firewall directly from the Azure Virtual WAN portal pages.
 
-### Exercise 3: Enforce Branch-to-Branch Inspection
+### Exercise 3: **Enforce Branch-to-Branch Inspection**
 
 The exercise focuses on configuring rules, testing the webpage through Firewalls and configuring routing intent and policies through the Virtual WAN portal.
 
-## Exercise 4: Isolate, Monitor and Remediate Azure vWAN Networking Issues
+## Exercise 4: **Isolate, Monitor and Remediate Azure vWAN Networking Issues**
 
 The exercise focuses on troubleshooting Azure vWAN networking issues, including viewing routes, configuring BGP peers, monitoring routes, using Azure Monitor Insights, and setting up packet captures for site-to-site VPNs, ensuring efficient network management and troubleshooting.
 

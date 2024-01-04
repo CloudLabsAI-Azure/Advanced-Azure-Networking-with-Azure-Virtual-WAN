@@ -8,7 +8,7 @@ In this exercise, you will log in to the Azure Portal and review the pre-deploye
 
 ### Getting Started with Lab
 
-1. Once the environment is provisioned, a virtual machine and lab guide will be loaded in your browser. Use this virtual machine throughout the workshop to perform the lab.
+1. Once the environment is provisioned, a virtual machine and **Lab guide** will be loaded in your browser. Use this virtual machine throughout the workshop to perform the lab.
 
     ![](./media/113.png)
 

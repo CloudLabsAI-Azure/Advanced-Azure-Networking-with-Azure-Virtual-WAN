@@ -4,7 +4,7 @@ Azure Networking Solutions provides a fundamental understanding of key networkin
 
 ### Key features of Azure Networking Solutions
 
-  - **Virtual Networks (VNets)**: Azure VNets provide isolation and segmentation of resources in the cloud. They allow you to create private networks, control IP address ranges, subnets, and segment resources based on requirements.
+  - **Virtual Networks (VNets)**: Azure VNets provide isolation and segmentation of resources in the cloud. They allow you to create private networks, control IP address ranges, and subnets, and segment resources based on requirements.
 
   - **Virtual Network Gateway**: This facilitates secure cross-premises connectivity by establishing encrypted connections between on-premises networks and Azure.
 
@@ -19,9 +19,9 @@ Azure Networking Solutions provides a fundamental understanding of key networkin
 
 ## Hands-on Lab Scenario
 
-Contoso Insurance is preparing to launch a new online insurance portal that has been developed by their in-house development team. In order to ensure a smooth and successful launch, the portal will undergo testing by both internal and beta users. To facilitate this testing process, Contoso has chosen to utilize Azure as their cloud platform. Azure offers a wide range of Infrastructure as a Service (IaaS) capabilities, including computing, networking, storage, and security features. These features make Azure an ideal choice for businesses operating in the insurance industry.
+Contoso Insurance is preparing to launch a new online insurance portal that has been developed by its in-house development team. In order to ensure a smooth and successful launch, the portal will undergo testing by both internal and beta users. To facilitate this testing process, Contoso has chosen to utilize Azure as its cloud platform. Azure offers a wide range of Infrastructure as a Service (IaaS) capabilities, including computing, networking, storage, and security features. These features make Azure an ideal choice for businesses operating in the insurance industry.
 
-In addition to testing the new portal, Contoso also has plans to modernize their operations by migrating their existing on-premises infrastructure to the Azure cloud. This migration will not only improve scalability but also enhance the overall security of their systems. To achieve this, Contoso will provision a comprehensive Azure Network Topology, which will include both a Platform and Application Landing Zone. Furthermore, they will establish hybrid connectivity between their on-premises data center and the Azure cloud.
+In addition to testing the new portal, Contoso also has plans to modernize its operations by migrating its existing on-premises infrastructure to the Azure cloud. This migration will not only improve scalability but also enhance the overall security of their systems. To achieve this, Contoso will provision a comprehensive Azure Network Topology, which will include both a Platform and Application Landing Zone. Furthermore, they will establish hybrid connectivity between their on-premises data center and the Azure cloud.
 
 Contoso is seeking assistance in configuring and deploying their insurance application on Azure, following the desired end-state architecture. This process will be carried out in phases, with the infrastructure of Azure resources for the Contoso Insurance Application being carefully aligned with the end-state architecture. Throughout the development and testing stages, progress will be closely monitored to ensure a successful outcome.
 

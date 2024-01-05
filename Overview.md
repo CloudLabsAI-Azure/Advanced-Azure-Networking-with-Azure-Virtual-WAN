@@ -33,10 +33,6 @@ Contoso is seeking assistance in configuring and deploying their insurance appli
   - Azure VPN Gateway
   - Azure Network Watcher
 
-## Solution Architecture
-
-![](./media/.png)
-
 ## Lab Context
 
 You will learn the fundamentals of Azure networking in this hands-on lab. You will gain practical experience using networking resources, establishing connections between cloud-based and on-premise resources, and dealing with Azure resources.

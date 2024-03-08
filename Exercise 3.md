@@ -14,7 +14,7 @@ In this exercise, you will review the default vWAN any-to-any connectivity routi
 
 1. On the **Basics** tab of the **vwan-prod-001** page, select **Virtual network connections** under the Connectivity section from the left navigation pane.
 
-1. Review the default routing configuration for a vnet connection (all connections are configured in the same way). Browse to the virtual wan under the Virtual network connections.
+1. Review the default routing configuration for a Vnet connection (all connections are configured in the same way). Browse to the virtual wan under the Virtual network connections.
 
 
      **Note the Default settings:** 
@@ -59,7 +59,7 @@ In this exercise, you will review the default vWAN any-to-any connectivity routi
     az network vhub get-effective-routes --resource-type RouteTable --resource-id $vhubdefaultrtid -g $rg -n $hubname --query 'value[].{Prefix:addressPrefixes[0],ASPath:asPath,NextHopType:nextHopType,NextHop:nextHops[0],Origin:routeOrigin}' -o table | awk '{ gsub(/\/subscriptions\/'$SubscriptionID'\/resourceGroups\/'$rg'\/providers\/Microsoft.Network\//,""); print }'
     ```
 
-1. What do you notice from the above output? Where are these routes coming from? This is the default vWAN any-to-any connectivity. Because both VNet and Branch connections are propagating to the Default Route table, these routes are programmed in the Default route table:
+1. What do you notice from the above output? Where are these routes coming from? This is the default vWAN for any-to-any connectivity. Because both VNet and Branch connections are propagating to the Default Route table, these routes are programmed in the Default route table:
 
     - Spoke vNets directly connected to the virtual hub (172.16.1.0/24, 172.16.2.0/24)
 
@@ -78,7 +78,7 @@ In this exercise, you will review the default vWAN any-to-any connectivity routi
 1. Click on the **nic-spoke1-<inject key="DeploymentID" enableCopy="false"/>**.
 
 
-1. Select **Effective routes** under Help section and you should see a list of associated route tables. This information provides details about the routes currently in effect.
+1. Select **Effective routes** under the Help section and you should see a list of associated route tables. This information provides details about the routes currently in effect.
 
 
 
@@ -218,7 +218,7 @@ The **Learned Routes** page shows the routes that are learned.
 1. Click on the **onpremdnvm-nic**.
 
 
-1. Select **Effective routes** under Help section and you should see a list of associated route tables. This information provides details about the routes currently in effect.
+1. Select **Effective routes** under the Help section and you should see a list of associated route tables. This information provides details about the routes currently in effect.
 
 
 

@@ -75,7 +75,7 @@ In this exercise, you will review the default vWAN any-to-any connectivity routi
 
     ![](media/.png)
 
-1. Click on the **onpremlabvm-nic**.
+1. Click on the **nic-spoke1-<inject key="DeploymentID" enableCopy="false"/>**.
 
 
 1. Select **Effective routes** under Help section and you should see a list of associated route tables. This information provides details about the routes currently in effect.
@@ -87,7 +87,7 @@ In this exercise, you will review the default vWAN any-to-any connectivity routi
     ```Bash
     ## Set the resource group and NIC name variables
     rg="Onprem-RG-<inject key="DeploymentID" enableCopy="false"/>"
-    nicname="onpremlabvm-nic"
+    nicname="nic-spoke1-<inject key="DeploymentID" enableCopy="false"/>"
 
     ## Use Azure CLI to show the effective route table for the specified NIC
     az network nic show-effective-route-table --resource-group $rg --name $nicname --output table
@@ -96,7 +96,7 @@ In this exercise, you will review the default vWAN any-to-any connectivity routi
 
 1. What do you notice from the above output? What are these networks, and where do they come from? Because the VM in the spoke vNet is associated with the Default Route table in Virtual Hub, it similarly receives the same routes from the prior step and allows it to reach networks connected to the virtual WAN, plus the additional vhub-1 network (192.168.10.0/24).
 
-## Task 4: Azure VPN gateway effective routes
+## Task 4: Virtual Hub effective routes
 
 This task helps you monitor Virtual WAN site-to-site VPN BGP information using the BGP Dashboard. Using the BGP dashboard, you can monitor BGP peers, advertised routes, and learned routes. The BGP dashboard is available for site-to-site VPNs that are configured to use BGP. The BGP dashboard can be accessed on the page for the site that you want to monitor.
 
@@ -179,18 +179,6 @@ This task helps you monitor Virtual WAN site-to-site VPN BGP information using t
 
     ![](media/70.png)
 
-
-    >**Note:** Similar results using Azure CLI in Cloud Shell: (Fill out the variables for the subscription ID, Resource group name and virtual hub name)
-
-    ```Bash
-    ## Set the resource group variables
-    rg="Sharedservices-RG-<inject key="DeploymentID" enableCopy="false"/>"
-    name ="BGP-Peer"
-
-    ## List BGP peer status for the specified virtual network gateway in a table format
-    az network vnet-gateway list-bgp-peer-status -g $rg -n $name -o table
-    ```
-
 1. What do you notice from this view? These are the BGP peer connections between the VPN gateway in the virtual hub and the VPN on-premises.
 
 ### **Advertised routes**
@@ -204,6 +192,8 @@ The **Advertised Routes** page contains the routes that are being advertised to 
 1. On the **Advertised Routes** page, you can view the top 50 BGP routes. To view all routes, click **Download advertised routes**.
 
     ![](media/72.png)
+
+1. What do you notice about this page? These are the routes that the Virtual WAN VPN Gateway is advertised from on-premises via VPN.
 
 ### **Learned routes**
 
@@ -219,3 +209,35 @@ The **Learned Routes** page shows the routes that are learned.
 
 1. What do you notice about this page? These are the routes that the Virtual WAN VPN Gateway is learning from on-premises via VPN.
 
+## Task 5: Branch effective routes
+
+1. In the Azure portal, type **Nic (1)** in the search box and select **Network interfaces (2)** from the results.
+
+    ![](media/.png)
+
+1. Click on the **onpremdnvm-nic**.
+
+
+1. Select **Effective routes** under Help section and you should see a list of associated route tables. This information provides details about the routes currently in effect.
+
+
+
+    >**Note:** Similar results using Azure CLI in Cloud Shell: (Fill out the variables for the subscription ID, Resource group name and virtual hub name)
+
+    ```Bash
+    ## Set the resource group and NIC name variables
+    rg="Onprem-RG-<inject key="DeploymentID" enableCopy="false"/>"
+    nicname="onpremdnvm-nic"
+
+    ## Use Azure CLI to show the effective route table for the specified NIC
+    az network nic show-effective-route-table --resource-group $rg --name $nicname --output table
+    ```
+1. What do you notice from the above output? What are these networks, and where do these routes come from? The VM on the on-premises vNet has routes programmed (default virtual WAN Any-to-Any connectivity) that allow it to connect to any network connected to the virtual WAN. This includes: 
+    - vhub-1 network (192.168.10.0/24) 
+    - Spoke vnets connected to vhub-1 (172.16.1.0/24, (172.16.2.0/24) 
+    - Spoke vnets connected to vhub-2 (172.16.3.0/24, 172.16.4.0/24) learned from hub-to-hub connectivity. 
+    - Branches connected to vhub-2 (10.200.0.0/16) learned from hub-to-hub connectivity.
+
+## Summary
+
+In the previous steps, you learned the default virtual WAN Any-to-Any routing associations and propagations and verified how they are programmed in the different components.  

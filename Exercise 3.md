@@ -14,7 +14,11 @@ In this exercise, you will review the default vWAN any-to-any connectivity routi
 
 1. On the **Basics** tab of the **vwan-prod-001** page, select **Virtual network connections** under the Connectivity section from the left navigation pane.
 
+    ![](media/114.png)
+
 1. Review the default routing configuration for a Vnet connection (all connections are configured in the same way). Browse to the virtual wan under the Virtual network connections.
+
+    ![](media/115.png)
 
 
      **Note the Default settings:** 
@@ -29,25 +33,33 @@ In this exercise, you will review the default vWAN any-to-any connectivity routi
 
     - The connection is propagating to the Default label
 
+      ![](media/116.png)
+
 
 ## Task 2. Default route effective routes
 
 1. Navigate to the **Basics** tab of the **vwan-prod-001** page, select **Hubs (1)** under the Connectivity section from the left navigation pane, and then click on **vwan-hub-prod-001 (2)**.
 
+    ![](media/117.png)
+
 
 1. Select **Effective Routes (1)** under Routing, and select the following information:
 
-    - Select **Route Tables (2)** from the dropdown for Choose resource type.
+   - Select **Route Tables (2)** from the dropdown for Choose resource type.
 
    - Select **Default (3)** from the dropdown for Resource.
+
+     ![](media/118.png)
 
 
     >**Note:** Similar results using Azure CLI in Cloud Shell: (Fill out the variables for the subscription ID, Resource group name and virtual hub name)
 
+    >**Note:** Make sure you replace the DID with <inject key="DeploymentID" enableCopy="false"/>
+
     ```Bash
     # Assign values to variables
     SubscriptionID="your_subscription_id"
-    rg="Sharedservices-RG-<inject key="DeploymentID" enableCopy="false"/>"
+    rg="Sharedservices-RG-DID"
     hubname="vwan-hub-prod-001"
 
     # Retrieve the route table ID for the default route table in the virtual hub
@@ -59,42 +71,51 @@ In this exercise, you will review the default vWAN any-to-any connectivity routi
     az network vhub get-effective-routes --resource-type RouteTable --resource-id $vhubdefaultrtid -g $rg -n $hubname --query 'value[].{Prefix:addressPrefixes[0],ASPath:asPath,NextHopType:nextHopType,NextHop:nextHops[0],Origin:routeOrigin}' -o table | awk '{ gsub(/\/subscriptions\/'$SubscriptionID'\/resourceGroups\/'$rg'\/providers\/Microsoft.Network\//,""); print }'
     ```
 
+    ![](media/119.png)
+
 1. What do you notice from the above output? Where are these routes coming from? This is the default vWAN for any-to-any connectivity. Because both VNet and Branch connections are propagating to the Default Route table, these routes are programmed in the Default route table:
 
-    - Spoke vNets directly connected to the virtual hub (172.16.1.0/24, 172.16.2.0/24)
+    - Spoke vNets directly connected to the virtual hub
 
-    - Branch connections (VPN Gateway) directly connected to vhub-1 (10.100.0.0/16)
+    - Branch connections (VPN Gateway) directly connected to vhub-1
 
-    - Spoke vnets connected to vhub-2 (172.16.3.0/24, 172.16.4.0/24) learned from hub-to-hub connectivity.
+    - Spoke vnets connected to vhub-2 learned from hub-to-hub connectivity.
 
-    - Branches connected to vhub-2 (10.200.0.0/16) learned from hub-to-hub connectivity.
+    - Branches connected to vhub-2 learned from hub-to-hub connectivity.
 
 ## Task 3: VM network interface effective routes
 
 1. In the Azure portal, type **Nic (1)** in the search box and select **Network interfaces (2)** from the results.
 
-    ![](media/.png)
+    ![](media/120.png)
 
 1. Click on the **nic-spoke1-<inject key="DeploymentID" enableCopy="false"/>**.
 
+    ![](media/121.png)
 
 1. Select **Effective routes** under the Help section and you should see a list of associated route tables. This information provides details about the routes currently in effect.
 
+    ![](media/122.png)
 
 
-    >**Note:** Similar results using Azure CLI in Cloud Shell: (Fill out the variables for the subscription ID, Resource group name and virtual hub name)
+
+    >**Note:** Similar results using Azure CLI in Cloud Shell: (Fill out the variables for the subscription ID, Resource group name and virtual hub name).
+
+    >**Note:** Make sure you replace the DID with <inject key="DeploymentID" enableCopy="false"/>
 
     ```Bash
     ## Set the resource group and NIC name variables
-    rg="Onprem-RG-<inject key="DeploymentID" enableCopy="false"/>"
-    nicname="nic-spoke1-<inject key="DeploymentID" enableCopy="false"/>"
+    rg="Prod-RG-DID"
+    nicname="nic-spoke1-DID"
 
     ## Use Azure CLI to show the effective route table for the specified NIC
     az network nic show-effective-route-table --resource-group $rg --name $nicname --output table
     ```
 
+    ![](media/123.png)
 
-1. What do you notice from the above output? What are these networks, and where do they come from? Because the VM in the spoke vNet is associated with the Default Route table in Virtual Hub, it similarly receives the same routes from the prior step and allows it to reach networks connected to the virtual WAN, plus the additional vhub-1 network (192.168.10.0/24).
+
+1. What do you notice from the above output? What are these networks, and where do they come from? Because the VM in the spoke vNet is associated with the Default Route table in Virtual Hub, it similarly receives the same routes from the prior step and allows it to reach networks connected to the virtual WAN, plus the additional vhub-1 network (10.4.0.0/16).
 
 ## Task 4: Virtual Hub effective routes
 

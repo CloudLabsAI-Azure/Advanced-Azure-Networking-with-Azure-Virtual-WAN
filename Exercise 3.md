@@ -234,30 +234,36 @@ The **Learned Routes** page shows the routes that are learned.
 
 1. In the Azure portal, type **Nic (1)** in the search box and select **Network interfaces (2)** from the results.
 
-    ![](media/.png)
+    ![](media/120.png)
 
 1. Click on the **onpremdnvm-nic**.
 
+    ![](media/125.png)
 
 1. Select **Effective routes** under the Help section and you should see a list of associated route tables. This information provides details about the routes currently in effect.
 
-
+    ![](media/126.png)
 
     >**Note:** Similar results using Azure CLI in Cloud Shell: (Fill out the variables for the subscription ID, Resource group name and virtual hub name)
 
+    >**Note:** Make sure you replace the DID with <inject key="DeploymentID" enableCopy="false"/>
+
     ```Bash
     ## Set the resource group and NIC name variables
-    rg="Onprem-RG-<inject key="DeploymentID" enableCopy="false"/>"
+    rg="Onprem-RG-DID"
     nicname="onpremdnvm-nic"
 
     ## Use Azure CLI to show the effective route table for the specified NIC
     az network nic show-effective-route-table --resource-group $rg --name $nicname --output table
     ```
+
+    ![](media/127.png)
+
 1. What do you notice from the above output? What are these networks, and where do these routes come from? The VM on the on-premises vNet has routes programmed (default virtual WAN Any-to-Any connectivity) that allow it to connect to any network connected to the virtual WAN. This includes: 
-    - vhub-1 network (192.168.10.0/24) 
-    - Spoke vnets connected to vhub-1 (172.16.1.0/24, (172.16.2.0/24) 
-    - Spoke vnets connected to vhub-2 (172.16.3.0/24, 172.16.4.0/24) learned from hub-to-hub connectivity. 
-    - Branches connected to vhub-2 (10.200.0.0/16) learned from hub-to-hub connectivity.
+    - vhub-1 network
+    - Spoke vnets connected to vhub-1
+    - Spoke vnets connected to vhub-2 learned from hub-to-hub connectivity. 
+    - Branches connected to vhub-2 learned from hub-to-hub connectivity.
 
 ## Summary
 

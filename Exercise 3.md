@@ -124,13 +124,9 @@ This task helps you monitor Virtual WAN site-to-site VPN BGP information using t
 
     ![](media/54.png)
 
-1. Click on **vnet-spoke2-<inject key="DeploymentID" enableCopy="false"/>**.
-
-    ![](media/130.png)
+1. Click on **vnet-shared-services-<inject key="DeploymentID" enableCopy="false"/>**.
 
 1. Copy the **Address space** and paste it into Notepad for later use.
-
-    ![](media/131.png)
 
 1. Navigate to the home page in the Azure portal, type **Virtual WANs (1)** in the search box and select **Virtual WANs (2)** from the results.
 
@@ -160,11 +156,11 @@ This task helps you monitor Virtual WAN site-to-site VPN BGP information using t
 
     - IPv4 address: Enter the **Address space (3)** that you copied in step 3
 
-    - Virtual Network connection: Select **vwan-vnet-002 (4)**
+    - Virtual Network connection: Select **onprem-vnet-001 (4)**
 
     - Select **Add (5)**
 
-        ![](media/135.png)
+        ![](media/.png)
 
 1. On the **BGP Peers** page, copy one of the **IP** and save it to notepad for later use.
 

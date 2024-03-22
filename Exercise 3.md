@@ -36,7 +36,7 @@ In this exercise, you will review the default vWAN any-to-any connectivity routi
       ![](media/116.png)
 
 
-## Task 2. Default route effective routes
+## Task 2: Default route effective routes
 
 1. Navigate to the **Basics** tab of the **vwan-prod-001** page, select **Hubs (1)** under the Connectivity section from the left navigation pane, and then click on **vwan-hub-prod-001 (2)**.
 
@@ -190,7 +190,6 @@ This task helps you monitor Virtual WAN site-to-site VPN BGP information using t
 
 1. You should see a list of BGP Peers. This information provides details about the currently active routes.
 
-
 1. To download this information to a CSV file, click **Download BGP peers** at the top of the page.
 
     ![](media/141.png)
@@ -235,7 +234,7 @@ The **Learned Routes** page shows the routes that are learned.
 
     ![](media/145.png)
 
-1. On the **vpn-gateway-prod-001** page, select **Configuration (1)** under Settings section and select or enter the following details:
+1. On the **vpn-gateway-prod-001** page, select **Configuration (1)** under the Settings section and select or enter the following details:
 
     - **Active-active mode (1):** Enabled
 
@@ -249,7 +248,7 @@ The **Learned Routes** page shows the routes that are learned.
 
       ![](media/147.png)
 
-1. On the **vpn-gateway-prod-001** page, select **BGP peers** under Monitoring section and You should see a list of BGP Peers. This information provides details about the currently active routes.
+1. On the **vpn-gateway-prod-001** page, select **BGP peers** under the Monitoring section and You should see a list of BGP Peers. This information provides details about the currently active routes.
 
     ![](media/148.png)
 

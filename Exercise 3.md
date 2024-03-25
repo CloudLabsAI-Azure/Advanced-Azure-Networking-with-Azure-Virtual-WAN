@@ -74,13 +74,13 @@ In this exercise, you will review the default vWAN any-to-any connectivity routi
 
 1. What do you notice from the above output? Where are these routes coming from? This is the default vWAN for any-to-any connectivity. Because both VNet and Branch connections are propagating to the Default Route table, these routes are programmed in the Default route table:
 
-    - Spoke vNets directly connected to the virtual hub
+    - Spoke vNets directly connected to the virtual hub (10.2.0.0/16, 10.3.0.0/16)
 
-    - Branch connections (VPN Gateway) directly connected to vhub-1
+    - Branch connections (VPN Gateway) directly connected to vhub-1 (10.1.0.0/16)
 
-    - Spoke vnets connected to vhub-2 learned from hub-to-hub connectivity.
+    - Spoke vnets connected to vhub-2 (10.7.0.0/16, 10.8.0.0/16) learned from hub-to-hub connectivity.
 
-    - Branches connected to vhub-2 learned from hub-to-hub connectivity.
+    - Branches connected to vhub-2 (10.10.0.0/16) learned from hub-to-hub connectivity.
 
 ## Task 3: VM network interface effective routes
 

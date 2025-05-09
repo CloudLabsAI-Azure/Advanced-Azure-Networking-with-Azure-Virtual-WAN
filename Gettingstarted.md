@@ -10,21 +10,21 @@ In this exercise, you will log in to the Azure Portal and review the pre-deploye
 
 1. Once the environment is provisioned, a virtual machine and **Lab guide** will be loaded in your browser. Use this virtual machine throughout the workshop to perform the lab.
 
-    ![](./media/113.png)
+   ![](./media/09052025(1).png)
 
 1. To get the lab environment details, you can select the **Environment Details** tab. Additionally, the credentials will also be emailed to your email address provided at registration.
 
-    ![](./media/94.png)
+   ![](./media/09052025(2).png)
     
 1. You can also open the Lab Guide in a separate full window by selecting the **Split Window** icon at the bottom right corner.
 
-    ![](./media/95.png) 
+   ![](./media/09052025(3).png)
 
 ## Task 1: Log in to Azure Portal and verify the pre-deployed resources
 
 1. Let us start by logging into the **Azure Portal** to check the resources deployed for the lab environment. In the virtual machine (VM) on the left, click on the Azure portal desktop icon as shown below.
 
-   ![](./media/96.png) 
+   ![](./media/09052025(4).png) 
    
 1. On the **Sign in to Microsoft Azure** window, you will see the login screen, enter the following username and click on **Next**.
 

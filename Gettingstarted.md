@@ -72,7 +72,7 @@ In this exercise, you will log in to the Azure Portal and review the pre-deploye
     
 1. Now, click on **Next** from the lower right corner to move to the next page.
 
-   ![](./Media/166.png)
+   ![alt text](image.png)
 
 ## Summary
 

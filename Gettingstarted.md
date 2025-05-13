@@ -8,17 +8,17 @@ In this exercise, you will log in to the Azure Portal and review the pre-deploye
 
 ### Getting Started with Lab
 
-1. Once the environment is provisioned, a virtual machine and **Lab guide** will be loaded in your browser. Use this virtual machine throughout the workshop to perform the lab.
+1. Once the environment is provisioned, a virtual machine and **Guide** will be loaded in your browser. Use this virtual machine throughout the workshop to perform the lab.
 
-   ![](./media/09052025(1).png)
+   ![](./media/09052025(39).png)
 
 1. To get the lab environment details, you can select the **Environment Details** tab. Additionally, the credentials will also be emailed to your email address provided at registration.
 
-   ![](./media/09052025(2).png)
+   ![](./media/09052025(40).png)
     
 1. You can also open the Lab Guide in a separate full window by selecting the **Split Window** icon at the bottom right corner.
 
-   ![](./media/09052025(3).png)
+   ![](./media/09052025(41).png)
 
 ## Task 1: Log in to Azure Portal and verify the pre-deployed resources
 
@@ -44,7 +44,7 @@ In this exercise, you will log in to the Azure Portal and review the pre-deploye
 
 1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
 
-1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+1. If a **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.
 
 1. Now you can see the Azure Portal Dashboard, click on **Resource groups** from the Navigate panel to see the resource groups.
 

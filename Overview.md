@@ -2,7 +2,9 @@
 
 Azure Networking Solutions provides a fundamental understanding of key networking concepts within the Microsoft Azure cloud platform. This overview serves as a primer for individuals and organizations looking to leverage Azure's networking capabilities to build secure, scalable, and highly available cloud environments.
 
-### Key features of Azure Networking Solutions
+## Overall Estimated Duration: 8 Hours
+
+## Key features of Azure Networking Solutions
 
   - **Virtual Networks (VNets)**: Azure VNets provide isolation and segmentation of resources in the cloud. They allow you to create private networks, control IP address ranges, and subnets, and segment resources based on requirements.
 
